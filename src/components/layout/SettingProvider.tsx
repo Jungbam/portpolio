@@ -11,7 +11,7 @@ const SettingProvider: React.FC<props> = ({ children }) => {
   return (
     <div className="primary">
       <Header />
-      <section className="flex min-h-[700px] flex-col items-center justify-center text-gray-600 body-font">
+      <section className="flex min-h-[850px] flex-col items-center justify-center text-gray-600 body-font">
         {children}
       </section>
       <Footer />

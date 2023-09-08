@@ -20,6 +20,7 @@ const ProjectPage = async ({ params }: any) => {
   const site = project?.properties.site.rich_text[0]?.plain_text;
   const imgSrc = project?.cover?.file.url;
   const learned = project?.properties.learned.multi_select;
+  const growth = project?.properties.growth.multi_select;
   const parts = project?.properties.part.multi_select;
   const status = project?.properties.status.rich_text[0].plain_text;
   return (
@@ -59,12 +60,22 @@ const ProjectPage = async ({ params }: any) => {
             ))}
           </ul>
           <h1 className="text-[24px] title-font font-semibold text-gray-800 dark:text-white mb-3">
-            성장한 점
+            구현 기능
           </h1>
-          <ul className="flex flex-wrap gap-[10px] list-none -mb-1 pl-5">
+          <ul className="flex flex-wrap gap-[10px] list-none mb-10 pl-5">
             {learned?.map((learn: any, idx: number) => (
               <li key={learn.id} className="w-full mb-1 dark:text-white">
                 {idx + 1}. {learn.name}
+              </li>
+            ))}
+          </ul>
+          <h1 className="text-[24px] title-font font-semibold text-gray-800 dark:text-white mb-3">
+            성장점
+          </h1>
+          <ul className="flex flex-wrap gap-[10px] list-none -mb-1 pl-5">
+            {growth?.map((learn: any, idx: number) => (
+              <li key={learn.id} className="w-full mb-1 dark:text-white">
+                {!learn.name.includes("-") && `${idx + 1} .`} {learn.name}
               </li>
             ))}
           </ul>

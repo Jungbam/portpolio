@@ -1,8 +1,8 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
+import Link from "next/link";
 
 import { reduceList } from "@/util/reduceList";
 
@@ -22,12 +22,6 @@ const ProjectItem: React.FC<props> = ({ project }) => {
   const imgSrc = project.cover?.file.url;
   const status = project?.properties.status.rich_text[0].plain_text;
 
-  const router = useRouter();
-
-  const linkHanlder = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    router.push(`/projects/${id}`);
-  };
   React.useEffect(() => {
     const initTimeout = setTimeout(() => {
       setInit(false);
@@ -38,10 +32,9 @@ const ProjectItem: React.FC<props> = ({ project }) => {
   }, []);
 
   return (
-    <>
+    <Link href={`/projects/${id}`} prefetch>
       <div
         className={`m-3 bg-[#F5F5F5] rounded-xl border border-[#DCDCDC] shadow-lg dark:shadow-white dark:bg-black dark:border-[#2A2A2A] hover:scale-105 transition-scale duration-150 ease-in-out cursor-pointer relative`}
-        onClick={linkHanlder}
       >
         <div className="relative w-full h-0 pb-[42.85%]">
           <Image
@@ -77,7 +70,7 @@ const ProjectItem: React.FC<props> = ({ project }) => {
           </div>
         )}
       </div>
-    </>
+    </Link>
   );
 };
 
