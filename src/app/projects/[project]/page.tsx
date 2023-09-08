@@ -70,9 +70,9 @@ const ProjectPage = async ({ params }: any) => {
             ))}
           </ul>
           <h1 className="text-[24px] title-font font-semibold text-gray-800 dark:text-white mb-3">
-            성장점
+            배우고 성장한 점
           </h1>
-          <ul className="flex flex-wrap gap-[10px] list-none -mb-1 pl-5">
+          <ul className="flex flex-wrap gap-[10px] list-none mb-10 pl-5">
             {growth?.map((learn: any, idx: number) => (
               <li key={learn.id} className="w-full mb-1 dark:text-white">
                 {!learn.name.includes("-") && `${idx + 1} .`} {learn.name}
