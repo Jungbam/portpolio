@@ -15,7 +15,7 @@ const Footer = () => {
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start gap-5">
           <Tstory />
-          <Github url="https://infomationjunk.tistory.com/" />
+          <Github url="https://github.com/Jungbam" />
         </span>
       </div>
     </footer>
