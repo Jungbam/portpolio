@@ -79,7 +79,7 @@ const ProjectPage = async ({ params }: any) => {
               </li>
             ))}
           </ul>
-          <div className="py-2 px-2 mt-[20px] flex bg-[#eccc68] dark:bg-[#2f3542] rounded-full">
+          <div className="py-2 px-2 mt-[20px] flex flex-col lg:flex-row bg-[#eccc68] dark:bg-[#2f3542] rounded-full">
             <Github url={github.href} text={github.text} />
             <LinkEl url={site} />
           </div>
