@@ -40,12 +40,12 @@ const ProjectPage = ({ params }: any) => {
         <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
           <div className="relative w-full h-0 pb-[60%]">
             <Image
-              className="absolute top-0 left-0 w-full h-full"
+              width={500}
+              height={400}
               src={imgSrc}
               alt={title}
-              layout="fill"
-              objectFit="cover"
               quality={100}
+              className="absolute top-0 left-0 w-full h-full"
             />
             <ServiceTag status={status} />
           </div>

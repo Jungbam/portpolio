@@ -6,7 +6,7 @@ import gaebal from "../../../public/gaebal.png";
 
 import ToggleDark from "./elements/ToggleDark";
 
-const Header = async () => {
+const Header = () => {
   return (
     <header className="primary text-gray-600 body-font border-b-[1px] border-[#D3D3D3] dark:border-[#6A6A6A] mb-10">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -32,7 +32,6 @@ const Header = async () => {
           <Link
             href="/projects"
             className="mr-5 hover:scale-110 transition-scale"
-            prefetch
           >
             포트폴리오
           </Link>

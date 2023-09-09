@@ -22,18 +22,18 @@ const ProjectItem: React.FC<props> = ({ project }) => {
   const status = project?.properties.status.rich_text[0].plain_text;
 
   return (
-    <Link href={`/projects/${id}`} prefetch>
+    <Link href={`/projects/${id}`}>
       <div
         className={`m-3 bg-[#F5F5F5] rounded-xl border border-[#DCDCDC] shadow-lg dark:shadow-white dark:bg-black dark:border-[#2A2A2A] hover:scale-105 transition-scale duration-150 ease-in-out cursor-pointer relative`}
       >
         <div className="relative w-full h-0 pb-[42.85%]">
           <Image
-            className="rounded-t-xl absolute top-0 left-0 w-full h-full"
+            width={500}
+            height={400}
             src={imgSrc}
             alt={title}
-            layout="fill"
-            objectFit="cover"
             quality={100}
+            className="rounded-t-xl absolute top-0 left-0 w-full h-full"
           />
           <ServiceTag status={status} />
         </div>
