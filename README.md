@@ -1,34 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+next.js 13 / notion API를 활용한 포트폴리오 사이트
 
-## Getting Started
+사이트 방문하기 : https://bamsport.vercel.app/home
 
-First, run the development server:
+1. 기술스택 : next.js(13버전/app 라우팅), react-query, notion API
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+2. 기능 설명
+   - next.js에서 제공하는 SSR, CSR, static 렌더링 방식을 활용하여 각 페이지별 구성
+   - eslint를 통한 코드 컨벤션 정리
+   - react-query를 활용하여 각 요청별 기능을 훅으로 정리
+   - 이미지 프리로딩을 통한 로딩속도 개선 및 렌더링 속도 개선
+   - 스켈레톤 UI, 로딩 스피너를 활용한 서버 요청간 클라이언트에게 제공될 UI 구성
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. 작업 기간 : 3일 (23.9.8 ~ 23.9.10)
