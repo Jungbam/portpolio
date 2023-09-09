@@ -14,7 +14,6 @@ interface props {
   project: any;
 }
 const ProjectItem: React.FC<props> = ({ project }) => {
-  const [init, setInit] = React.useState(true);
   const id = project.id;
   const title = project.properties.title.title[0].plain_text;
   const description = project.properties.description.rich_text[0].plain_text;
@@ -22,17 +21,8 @@ const ProjectItem: React.FC<props> = ({ project }) => {
   const imgSrc = project.cover?.file.url;
   const status = project?.properties.status.rich_text[0].plain_text;
 
-  React.useEffect(() => {
-    const initTimeout = setTimeout(() => {
-      setInit(false);
-    }, 500);
-    return () => {
-      clearTimeout(initTimeout);
-    };
-  }, []);
-
   return (
-    <Link href={`/projects/${id}`} prefetch onMouseOver={() => setInit(false)}>
+    <Link href={`/projects/${id}`} prefetch>
       <div
         className={`m-3 bg-[#F5F5F5] rounded-xl border border-[#DCDCDC] shadow-lg dark:shadow-white dark:bg-black dark:border-[#2A2A2A] hover:scale-105 transition-scale duration-150 ease-in-out cursor-pointer relative`}
       >
@@ -61,14 +51,6 @@ const ProjectItem: React.FC<props> = ({ project }) => {
             ))}
           </div>
         </div>
-        {init && (
-          <div className="absolute top-0 left-0 w-full h-full animate-pulse">
-            <div className="relative w-full h-0 pb-[42.85%] rounded-t-xl">
-              <div className="absolute top-0 left-0 w-full h-full bg-gray-300 rounded-t-lg"></div>
-            </div>
-            <div className="flex flex-col px-5 py-2"></div>
-          </div>
-        )}
       </div>
     </Link>
   );
