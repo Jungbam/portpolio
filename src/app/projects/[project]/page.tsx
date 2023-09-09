@@ -1,15 +1,23 @@
+"use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import Image from "next/image";
 
-import { notionHandler } from "@/axios/notionAPI";
 import ProjectTag from "@/components/project/ProjectTag";
 import Github from "@/components/icon/github";
 import LinkEl from "@/components/icon/link";
 import ServiceTag from "@/components/icon/service";
-const ProjectPage = async ({ params }: any) => {
-  const lists = await notionHandler.getData();
-  const project = lists?.filter((list: any) => list.id === params.project)[0];
+import useGetNotion from "@/hooks/useAPI/useGetNotion";
+import LoadingSpinner from "@/components/icon/loadingSpinner";
+
+const ProjectPage = ({ params }: any) => {
+  const { isLoading, data } = useGetNotion();
+  const projects = data?.data.data;
+
+  const project = projects?.filter(
+    (list: any) => list.id === params.project,
+  )[0];
+
   const title = project?.properties.title.title[0].plain_text;
   const description = project?.properties.description.rich_text[0].plain_text;
   const github = {
@@ -23,6 +31,9 @@ const ProjectPage = async ({ params }: any) => {
   const growth = project?.properties.growth.multi_select;
   const parts = project?.properties.part.multi_select;
   const status = project?.properties.status.rich_text[0].plain_text;
+
+  if (isLoading) return <LoadingSpinner />;
+
   return (
     <section className="text-gray-600 body-font">
       <div className="container flex flex-wrap px-5 pb-24 mx-auto items-center">
@@ -43,7 +54,7 @@ const ProjectPage = async ({ params }: any) => {
           </h1>
           <p className="leading-relaxed text-base">{description}</p>
           <div className="flex flex-wrap mt-6">
-            {tags.map((tag: any) => (
+            {tags?.map((tag: any) => (
               <ProjectTag key={tag.id} name={tag.name} color={tag.color} />
             ))}
           </div>
