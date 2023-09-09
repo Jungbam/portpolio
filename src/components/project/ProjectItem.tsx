@@ -32,7 +32,7 @@ const ProjectItem: React.FC<props> = ({ project }) => {
   }, []);
 
   return (
-    <Link href={`/projects/${id}`} prefetch>
+    <Link href={`/projects/${id}`} prefetch onMouseOver={() => setInit(false)}>
       <div
         className={`m-3 bg-[#F5F5F5] rounded-xl border border-[#DCDCDC] shadow-lg dark:shadow-white dark:bg-black dark:border-[#2A2A2A] hover:scale-105 transition-scale duration-150 ease-in-out cursor-pointer relative`}
       >
