@@ -2,20 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { notionHandler } from "@/axios/notionAPI";
-
 import gaebal from "../../../public/gaebal.png";
 
 import ToggleDark from "./elements/ToggleDark";
 
 const Header = async () => {
-  const projects = await notionHandler.getData();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  projects?.map((project: any) => {
-    const imgSrc = project.cover?.file.url;
-    const title = project.properties.title.title[0].plain_text;
-    <Image src={imgSrc} width={300} height={300} alt={title} />;
-  });
   return (
     <header className="primary text-gray-600 body-font border-b-[1px] border-[#D3D3D3] dark:border-[#6A6A6A] mb-10">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">

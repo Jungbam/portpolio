@@ -2,13 +2,19 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
+import usePreloadNotion from "@/hooks/optimization/usePreloadNotion";
+
 import developer from "../../../public/develper.json";
 import LottiePlayer from "../lottie/LottiePlayer";
+
 const Introduce = () => {
+  usePreloadNotion();
   const router = useRouter();
+
   const scrollDown = () => {
     document.documentElement.scrollTop = 1000;
   };
+
   return (
     <div className="container mx-auto flex px-5 md:flex-row flex-col items-center">
       <div className="lg:flex-grow md:w-1/2 lg:pr-10 md:pr-8 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
