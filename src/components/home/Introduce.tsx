@@ -2,13 +2,10 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-import usePreloadNotion from "@/hooks/optimization/usePreloadNotion";
-
 import developer from "../../../public/develper.json";
 import LottiePlayer from "../lottie/LottiePlayer";
 
 const Introduce = () => {
-  usePreloadNotion();
   const router = useRouter();
 
   const scrollDown = () => {
