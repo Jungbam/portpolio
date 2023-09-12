@@ -29,6 +29,9 @@ const Header = () => {
           <Link href="/" className="mr-5 hover:scale-110 transition-scale">
             HOME
           </Link>
+          <Link href="/about" className="mr-5 hover:scale-110 transition-scale">
+            ABOUT
+          </Link>
           <Link
             href="/projects"
             className="mr-5 hover:scale-110 transition-scale"

@@ -15,7 +15,6 @@ interface props {
   priority?: boolean;
 }
 const ProjectItem: React.FC<props> = ({ project, priority }) => {
-  console.log(priority);
   const id = project.id;
   const title = project.properties.title.title[0].plain_text;
   const description = project.properties.description.rich_text[0].plain_text;
