@@ -11,8 +11,7 @@ import useGetNotion from "@/hooks/useAPI/useGetNotion";
 import LoadingSpinner from "@/components/icon/loadingSpinner";
 
 const ProjectPage = ({ params }: any) => {
-  const { isLoading, data } = useGetNotion();
-  const projects = data?.data.data;
+  const { isLoading, data: projects } = useGetNotion();
 
   const project = projects?.filter(
     (list: any) => list.id === params.project,
@@ -31,9 +30,12 @@ const ProjectPage = ({ params }: any) => {
   const growth = project?.properties.growth.multi_select;
   const parts = project?.properties.part.multi_select;
   const status = project?.properties.status.rich_text[0].plain_text;
+  const member = project?.properties.member.rich_text[0].plain_text;
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (isLoading) return <LoadingSpinner />;
-
   return (
     <section className="text-gray-600 body-font">
       <div className="container flex flex-wrap px-5 pb-24 mx-auto items-center">
@@ -52,7 +54,14 @@ const ProjectPage = ({ params }: any) => {
           <h1 className="sm:text-3xl text-2xl font-medium title-font mt-8 mb-6 text-gray-900">
             {title}
           </h1>
-          <p className="leading-relaxed text-base">{description}</p>
+          <p className="leading-relaxed text-base">
+            <span className="font-bold mt-2">설명 : </span>
+            {description}
+          </p>
+          <p className="leading-relaxed text-base">
+            <span className="font-bold mt-2">팀원 : </span>
+            {member}
+          </p>
           <div className="flex flex-wrap mt-6">
             {tags?.map((tag: any) => (
               <ProjectTag key={tag.id} name={tag.name} color={tag.color} />
