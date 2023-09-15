@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
-import { Canvas } from "@react-three/fiber";
 
-import Character from "@/components/layout/threed/character";
+import RecentStudies from "@/components/about/RecentStudies";
 
 const AboutPage = () => {
   return (
-    <div>
-      <Canvas className="w-[200px] h-[200px]">
-        <Character />
-      </Canvas>
+    <div className="w-full h-full">
+      <RecentStudies />
     </div>
   );
 };
