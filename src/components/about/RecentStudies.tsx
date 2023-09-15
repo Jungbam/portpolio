@@ -3,15 +3,29 @@ import { Canvas } from "@react-three/fiber";
 
 import CircleEx from "@/components/icon/threed/CircleEx";
 import CylinderEx from "@/components/icon/threed/CylinderEx";
+
+import SelectBox from "../layout/elements/SelectBox";
 const RecentStudies = () => {
+  const options = [
+    { label: "원", value: "circle" },
+    { label: "실린더", value: "cylinder" },
+  ];
+  const [selectedValue, setSelectedValue] =
+    React.useState<(typeof options)[number]["label"]>("circle");
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 lg:py-10 mx-auto flex flex-wrap md:py-0">
-        <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+        <div className="relative lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+          <SelectBox
+            options={options}
+            value={selectedValue}
+            onChange={(e) => setSelectedValue(e.target.value)}
+            className="absolute top-0 right-0 bg-white border border-gray-300 focus:outline-none focus:border-indigo-500 text-base mt-4 mr-4 rounded-lg z-10"
+          />
           <div className="object-cover object-center lg:h-full w-full md:h-[500px] bg-blue-100">
             <Canvas>
-              <CircleEx />
-              <CylinderEx />
+              {selectedValue === "circle" && <CircleEx />}
+              {selectedValue === "cylinder" && <CylinderEx />}
             </Canvas>
           </div>
         </div>
@@ -35,6 +49,10 @@ const RecentStudies = () => {
                 어떤 것을 공부중이지?
               </h2>
               <p className="leading-relaxed text-base">Three.js</p>
+              <p className="leading-relaxed text-base">
+                왼쪽에 구현된 도형을 마우스(휠, 드래그)와 상단 컨트롤러로
+                조작해봐.
+              </p>
             </div>
           </div>
           <div className="flex flex-col mb-10 lg:items-start items-center">
@@ -55,10 +73,10 @@ const RecentStudies = () => {
             </div>
             <div className="flex-grow">
               <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                왜 three.js를 공부하고 있지?
+                왜 Three.js를 공부하고 있지?
               </h2>
               <p className="leading-relaxed text-base">
-                3D 그래픽을 다루는 것이 재미있잖아. 2D로 만든 웹을 3Dfh 만든다면
+                3D 그래픽을 다루는 것이 재미있잖아. 2D로 만든 웹을 3D로 만든다면
                 얼마나 재미있을까?
               </p>
               <p className="leading-relaxed text-base">
@@ -95,12 +113,7 @@ const RecentStudies = () => {
                 있게 해줘.
               </p>
               <p className="leading-relaxed text-base">
-                간단한 예제를 통해 구현된 원과 실린더인데 우측 상단에 있는
-                컨트롤러를 통해서 조작해봐.
-              </p>
-              <p className="leading-relaxed text-base">
-                three.js를 React에서 사용하는 방법에 대해서 정리할텐데 아래 글로
-                넘어와.
+                더 궁금하다면 내 블로그로 놀러와.
               </p>
               <a
                 href="https://infomationjunk.tistory.com/178"
