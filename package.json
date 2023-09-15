@@ -9,13 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.14.1",
     "@tanstack/react-query": "^4.29.25",
-    "@types/node": "20.5.9",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "axios": "^1.5.0",
     "dotenv": "^16.3.1",
+    "leva": "^0.9.35",
     "next": "13.4.10",
     "postcss": "8.4.29",
     "react": "18.2.0",
@@ -23,11 +22,17 @@
     "react-lottie-player": "^1.5.5",
     "sharp": "^0.32.5",
     "tailwindcss": "3.3.3",
+    "three": "^0.156.1",
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@react-three/drei": "^9.83.9",
     "@tanstack/eslint-plugin-query": "^4.29.25",
     "@tanstack/react-query-devtools": "^4.29.25",
+    "@types/node": "20.5.9",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "@types/three": "^0.156.0",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",

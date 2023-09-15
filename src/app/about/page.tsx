@@ -1,7 +1,14 @@
+"use client";
 import React from "react";
 
-const page = () => {
-  return <div>나는</div>;
+import RecentStudies from "@/components/about/RecentStudies";
+
+const AboutPage = () => {
+  return (
+    <div className="w-full h-full">
+      <RecentStudies />
+    </div>
+  );
 };
 
-export default page;
+export default AboutPage;
