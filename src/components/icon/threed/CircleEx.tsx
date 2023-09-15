@@ -6,7 +6,7 @@ import { OrbitControls } from "@react-three/drei";
 import { useControls } from "leva";
 import { useFrame } from "@react-three/fiber";
 
-const Circle = () => {
+const CircleEx = () => {
   const meshRef = React.useRef<Mesh | null>(null);
   const wireRef = React.useRef<Mesh | null>(null);
   const {
@@ -68,4 +68,4 @@ const Circle = () => {
   );
 };
 
-export default Circle;
+export default CircleEx;

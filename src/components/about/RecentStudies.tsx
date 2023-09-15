@@ -1,8 +1,8 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 
-import Circle from "@/components/icon/threed/Circle";
-import Cylinder from "@/components/icon/threed/Cylinder";
+import CircleEx from "@/components/icon/threed/CircleEx";
+import CylinderEx from "@/components/icon/threed/CylinderEx";
 const RecentStudies = () => {
   return (
     <section className="text-gray-600 body-font">
@@ -10,8 +10,8 @@ const RecentStudies = () => {
         <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
           <div className="object-cover object-center lg:h-full w-full md:h-[500px] bg-blue-100">
             <Canvas>
-              <Circle />
-              <Cylinder />
+              <CircleEx />
+              <CylinderEx />
             </Canvas>
           </div>
         </div>
